@@ -3,6 +3,7 @@ import './App.css';
 import React, {Component} from 'react';
 import axios from 'axios';
 //import Itemcomponent from '.components/Itemcomponent';
+import DogComponent from './components/DogComponent';
 
 
 
@@ -16,9 +17,9 @@ class App extends Component {
     getDogs = async () => {
         const apiKey = process.env.REACT_APP_API_KEY;
         console.log(apiKey);
-        const dogs = await axios.get(`https://api.thedogapi.com/v1/images/search?limit=20&api_key=${apiKey}`);
-       // console.log(dogs.data);
-       this.setState({dogs: dogs.data, isLoading: false});
+        const dogs = await axios.get(`https://api.thedogapi.com/v1/images/search?limit=30&api_key=${apiKey}`);
+        console.log(dogs.data);
+        this.setState({dogs: dogs.data, isLoading: false});
     }
     
     componentDidMount() {
@@ -26,9 +27,27 @@ class App extends Component {
 }
    
     render(){
-        const {isLoading} = this.state;
+        const {isLoading, dogs} = this.state;
         return (
-            <div>{isLoading ? "Loading..." : "The page is loaded"}</div>
+            <section class="container">
+                {isLoading
+                ? ( <div class ="loader">
+                    <span class="loader__text"> "Loading..."</span>
+                </div>) 
+                : dogs.map(dog => {
+                    console.log("breed=", dog.breeds)
+                        return (
+                        <div class="dogs"><DogComponent
+                            key={dog.id}
+                            id={dog.id}
+                            link={dog.url}
+                            width={dog.width}
+                            height={dog.height}
+                            name = {(dog.breeds.length>0 ? dog.breeds[0].name : "unknown")}
+                        />
+                        </div>
+                        );
+            })}</section>
         )
     }
 }
