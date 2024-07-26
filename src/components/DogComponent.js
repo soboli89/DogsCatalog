@@ -1,19 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Dog.css";
 
 function DogComponent({name, id, link, width, height}) {
-    return 
-        <div class="dog">
-           <h3 class="dog__name">{name}</h3>
-           <h5 class="dog__width">{width}</h5>
+    return (
+      
+        <div className="dog">
+            <img src={link} alt={name} title={name}/>
+            <div className="dog__column">
+               <h3 className="dog__name">{name}</h3>
+               <h5 className="dog__width">{width}</h5>
+               <h5 className="height">{height}</h5>
+           </div>
         </div>
+    )
 }
 
 DogComponent.propTypes = {
     id: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-    name: PropTypes.array.isRequired
+    width: PropTypes.number,
+    height: PropTypes.number,
+    //name: PropTypes.array.isRequired
 };
 export default DogComponent;
