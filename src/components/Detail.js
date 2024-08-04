@@ -8,19 +8,17 @@ function Detail() {
     const { name, link, width, height, breeds, bred_for, temperament, weightI, weightM } = location.state;
   
     return (
-        console.log(breeds),
         <div className="dog__container">
-        <h3 className="dog__detail__name">{name}</h3>
-        <img src={link} alt={name} title={name}/>
-        <div className="dog__column">
-            <h5 className="dog__details">{"width: "+width}</h5>
-            <h5 className="dog__details">{"height: "+height}</h5>
-            <h5 className="dog__details">{"Bred for: "+bred_for}</h5>
-            <h5 className="dog__details">{"Temperament: "+temperament}</h5>
-            <h5 className="dog__details">{"Weight imperial: "+weightI}</h5>
-            <h5 className="dog__details">{"Weight metric: "+weightM}</h5>
-           
-        </div>
+            <h3 className="dog__detail__name">{name}</h3>
+            <img src={link} alt={name} title={name}/>
+            <div className="dog__details__column">
+                <h5 className="dog__details">{"width: "+width}</h5>
+                <h5 className="dog__details">{"height: "+height}</h5>
+                <h5 className="dog__details">{"Bred for: "+bred_for}</h5>
+                <h5 className="dog__details">{"Temperament: "+temperament}</h5>
+                <h5 className="dog__details">{"Weight imperial: "+weightI}</h5>
+                <h5 className="dog__details">{"Weight metric: "+weightM}</h5>
+            </div>
     </div>
     );
   }
