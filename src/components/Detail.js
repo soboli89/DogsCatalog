@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 
 function Detail() {
     const location = useLocation();
-    const { name, link, width, height, breeds, bred_for, temperament, weightI, weightM } = location.state;
+    const { name, link, width, height, bred_for, temperament, weightI, weightM } = location.state;
   
     return (
         <div className="dog__container">

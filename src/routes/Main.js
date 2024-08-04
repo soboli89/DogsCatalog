@@ -4,8 +4,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import DogComponent from '../components/DogComponent';
 import Search from '../components/Search';
-import {HashRouter, Route} from 'react-router-dom';
-//import { useState } from 'react';
 
 
 class Main extends Component {
@@ -31,7 +29,7 @@ class Main extends Component {
     };
    
     render(){
-        const {isLoading, dogs, search, setSearch, breedName} = this.state;
+        const {isLoading, dogs, breedName} = this.state;
         
         return (
             <section className="container">
