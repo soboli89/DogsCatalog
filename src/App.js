@@ -15,16 +15,6 @@ function App(){
             <Route path="/about" element={<About/>}/> 
         </Routes>
     </HashRouter>
-    /*
-   <BrowserRouter>
-     
-          <Routes>
-                
-                <Route path="/" exact element={<Main/>}></Route>
-                <Route path="/dog-details" element={<Detail/>}></Route>
-                <Route path="/about" element={<About/>}></Route>
-        </Routes>
-        </BrowserRouter>*/
     );
 }
 
